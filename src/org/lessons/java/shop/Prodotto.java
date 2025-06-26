@@ -22,4 +22,8 @@ public class Prodotto {
     this.code = randomCode.nextInt(randomMax) + randomMin;
   }
 
+  public float getNetPrice() {
+    return this.netPrice;
+  }
+
 }
