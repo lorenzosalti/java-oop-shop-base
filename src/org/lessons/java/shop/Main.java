@@ -7,15 +7,10 @@ public class Main {
 
     Prodotto milk = new Prodotto("Parmalat", "Latte di vacca parzialmente scremato", 1.25f, 4);
 
-    System.out.println(milk.name);
-    System.out.println(milk.description);
-    // System.out.println(milk.netPrice);
-    System.out.println(milk.iva);
-    System.out.println(milk.code);
-
     System.out.println("Il prezzo netto del prodotto è: " + milk.getNetPrice());
 
-    System.out.print("Il prezzo totale del prodotto è: ");
-    System.out.printf("%.2f", milk.getFullPrice());
+    System.out.println("Il prezzo totale del prodotto è: " + milk.getFullPrice());
+
+    System.out.println("Il nome esteso del prodotto è: " + milk.getExtendedName());
   }
 }
