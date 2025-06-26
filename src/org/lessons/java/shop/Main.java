@@ -14,5 +14,8 @@ public class Main {
     System.out.println(milk.code);
 
     System.out.println("Il prezzo netto del prodotto è: " + milk.getNetPrice());
+
+    System.out.print("Il prezzo totale del prodotto è: ");
+    System.out.printf("%.2f", milk.getFullPrice());
   }
 }
