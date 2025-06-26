@@ -9,8 +9,10 @@ public class Main {
 
     System.out.println(milk.name);
     System.out.println(milk.description);
-    System.out.println(milk.netPrice);
+    // System.out.println(milk.netPrice);
     System.out.println(milk.iva);
     System.out.println(milk.code);
+
+    System.out.println("Il prezzo netto del prodotto è: " + milk.getNetPrice());
   }
 }
