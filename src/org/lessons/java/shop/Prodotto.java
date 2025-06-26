@@ -26,4 +26,9 @@ public class Prodotto {
     return this.netPrice;
   }
 
+  public float getFullPrice() {
+    float fullPrice = this.netPrice + (this.netPrice * this.iva / 100);
+    return fullPrice;
+  }
+
 }
