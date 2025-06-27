@@ -17,12 +17,19 @@ public class Prodotto {
   private BigDecimal netPrice;
   private BigDecimal iva;
 
-  // CONSTRUCTOR
+  // CONSTRUCTORS
   protected Prodotto(String name, String description, BigDecimal netPrice, BigDecimal iva) {
     this.name = name;
     this.description = description;
     this.netPrice = netPrice.setScale(2, RoundingMode.DOWN);
     this.iva = iva;
+  }
+
+  protected Prodotto(String name, String description) {
+    this.name = name;
+    this.description = description;
+    this.netPrice = null;
+    this.iva = null;
   }
 
   // METHODS
@@ -70,8 +77,12 @@ public class Prodotto {
   }
 
   protected BigDecimal getFullPrice() {
-    BigDecimal fullPrice = this.netPrice.add(((this.netPrice.multiply(this.iva)).divide(new BigDecimal(100))));
-    return fullPrice.setScale(2, RoundingMode.DOWN);
+    if (this.netPrice != null && this.iva != null) {
+      BigDecimal fullPrice = this.netPrice.add(((this.netPrice.multiply(this.iva)).divide(new BigDecimal(100))));
+      return fullPrice.setScale(2, RoundingMode.DOWN);
+    } else {
+      return null;
+    }
   }
 
   // iva
