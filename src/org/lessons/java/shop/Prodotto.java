@@ -10,29 +10,29 @@ public class Prodotto {
   int randomMax = 900000;
   int randomMin = 100000;
 
-  public int code = randomCode.nextInt(randomMax) + randomMin;
-  public String name;
-  public String description;
-  public BigDecimal netPrice;
-  public BigDecimal iva;
+  private int code = randomCode.nextInt(randomMax) + randomMin;
+  private String name;
+  private String description;
+  private BigDecimal netPrice;
+  private BigDecimal iva;
 
-  public Prodotto(String name, String description, BigDecimal netPrice, BigDecimal iva) {
+  protected Prodotto(String name, String description, BigDecimal netPrice, BigDecimal iva) {
     this.name = name;
     this.description = description;
     this.netPrice = netPrice;
     this.iva = iva;
   }
 
-  public BigDecimal getNetPrice() {
+  protected BigDecimal getNetPrice() {
     return this.netPrice.setScale(2, RoundingMode.DOWN);
   }
 
-  public BigDecimal getFullPrice() {
+  protected BigDecimal getFullPrice() {
     BigDecimal fullPrice = this.netPrice.add(((this.netPrice.multiply(this.iva)).divide(new BigDecimal(100))));
     return fullPrice.setScale(2, RoundingMode.DOWN);
   }
 
-  public String getExtendedName() {
+  protected String getExtendedName() {
     String extendedName = this.code + "-" + this.name;
     return extendedName;
   }
