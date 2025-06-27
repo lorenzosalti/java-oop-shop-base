@@ -23,6 +23,28 @@ public class Prodotto {
     this.iva = iva;
   }
 
+  protected String getName() {
+    return this.name;
+  }
+
+  protected String setName(String name) {
+    if (name != null) {
+      this.name = name;
+    }
+    return this.name;
+  }
+
+  protected String getDescription() {
+    return this.description;
+  }
+
+  protected String setDescription(String description) {
+    if (description != null) {
+      this.description = description;
+    }
+    return this.description;
+  }
+
   protected BigDecimal getNetPrice() {
     return this.netPrice.setScale(2, RoundingMode.DOWN);
   }
